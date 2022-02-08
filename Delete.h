@@ -10,7 +10,7 @@ void DezalocarePrimNod(Node** PrimulNod); // Dezalocare Primului Nod
 
 void DezalocareNodTerminal(Node* PrimulNod); // Dezalocare Ultim Nod 
 
-void DezalocareNodDupaOAnumitaPozitie(Node* PrimulNod, char* username); // Dezalocare dupa nume (un criteriu relevant)
+void DezalocareNodDupaOAnumitaPozitie(Node** PrimulNod, char* username); // Dezalocare dupa nume (un criteriu relevant)
 
 
 #endif 

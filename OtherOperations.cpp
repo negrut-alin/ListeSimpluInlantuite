@@ -51,5 +51,18 @@ void TraversareLista(Node* PrimulNode) {
 	}
 }
 
+unsigned numarElementeLista(Node* CapNod) { // Returneaza Numarul de elemente 
+   
+	unsigned contor = 0;  // Pornim de la 0 elemente 
+
+	while (CapNod != NULL) {
+		contor++;
+		CapNod = CapNod->nextNode;
+	}
+
+	return contor;
+
+}
+
 
 

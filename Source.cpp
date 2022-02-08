@@ -96,7 +96,7 @@ REVENIRE:
 			char tempLine[MAX_BUFFER];
 			printf("\n\n Dati-mi numele de utilizator : ");
 			scanf_s(" %s", &tempLine, (unsigned)sizeof(tempLine));
-			DezalocareNodDupaOAnumitaPozitie(PrimulNode, tempLine);
+			DezalocareNodDupaOAnumitaPozitie(&PrimulNode, tempLine);
 			break;
 		default:
 			goto REVENIRE2; // Daca s-a gresit alegerea , ne intoarcem spre REVENIRE1 .

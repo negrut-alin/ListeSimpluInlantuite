@@ -54,45 +54,46 @@ void DezalocareNodTerminal(Node* PrimulNod) // Dezalocare Ultim Nod
 
 }
 
-void DezalocareNodDupaOAnumitaPozitie(Node* PrimulNod, char* username)
+void DezalocareNodDupaOAnumitaPozitie(Node** PrimulNod, char* username)
 {
 
-    if (!listaActiva(PrimulNod))
+    Node* nodCautat = *PrimulNod, *nodCautatAnterior = NULL;  // Preluam referinta capului actual 
+
+    if (!listaActiva(*PrimulNod))
     {
         printf("\n NU SE POATE EFECTUA ACEASTA OPERATIUNE PE LISTE GOALE !\n");
         return;
     }
 
+    unsigned pozitieElementCautat = CautareLista(*PrimulNod,username);  // Preluare Pozitie 
 
-    // Cautam in lista  dupa acel username 
-    unsigned pozitie = CautareLista(PrimulNod,username); 
-
-
-    if (!pozitie)  // 
-        printf("\n Utilizatorul NU a fost gasit ! \n");
-
-
-    else if (pozitie == 1)  // Userul cautat este cap
-
-        DezalocarePrimNod(&PrimulNod);
-     
-    else
+    if (pozitieElementCautat == 0) // Daca elementul cu numele cautat nu exista 
     {
-        Node* Iterator = PrimulNod,*temp; 
-
-        //
-        for (unsigned i = 1; i < (pozitie-1); i++, Iterator = Iterator->nextNode);
-
-        // Navigam pana la ( aceea pozitie - 1 ) NODUL PRECEDENT CELUI PE CARE-L CAUTAM 
-
-        printf("%s", Iterator->utilizator.username);
-
-        temp = Iterator->nextNode; // Retinem nodul cautat pentru stergere 
-
-        Iterator->nextNode = Iterator->nextNode->nextNode; // Inlaturam nodul din lista 
-
-
-        StergereNod(temp);
+        printf("\n NU EXISTA ELEMENT CU ACEST NUME !\n");
+        return;
     }
+
+    else if (pozitieElementCautat == 1) // Daca elementul cautat se afla pe prima pozitie 
+        DezalocarePrimNod(PrimulNod);
+
+    else if (numarElementeLista(*PrimulNod) == pozitieElementCautat) // Ultimul element este cel cautat
+        DezalocareNodTerminal(*PrimulNod);
+
+    else {  // Daca elementul SE AFLA IN LISTA DAR NU PE PRIMUL LOC 
+         
+        for (unsigned i = 1; i < pozitieElementCautat;i++)
+        {
+            nodCautatAnterior = nodCautat;
+            nodCautat = nodCautat->nextNode;
+        }
+
+        nodCautatAnterior->nextNode = nodCautat->nextNode; // Inlaturare Nod din Lista 
+
+        StergereNod(nodCautat); // Eliberare Nod Cautat 
+
+    }
+
+    printf("Nod-ul asociat cu numele \"%s\ a fost eliminat !", username);
+
     
 }
