@@ -13,3 +13,12 @@ void ConvertToCharPointer(char** Destination, char* Source) {
 
 	strcpy_s(*Destination, lengthDestination, Source); // Copiere de la Sursa la Destinatie 
 }
+
+void IntershimbareNoduri(Node** FirstNode, Node** SecondNode)
+{
+	UtilizatorLeagueCS informatieNod = (*FirstNode)->utilizator;  // Preluare Informatie din Primul Nod 
+
+	// Interschimbare infomatie intre noduri 
+	(*FirstNode)->utilizator = (*SecondNode)->utilizator;
+	(*SecondNode)->utilizator = informatieNod;
+}

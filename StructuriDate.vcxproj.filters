@@ -33,25 +33,31 @@
     <ClCompile Include="Delete.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sortare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Insert.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LinkedListDeclaration.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Utility.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DataNode.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OtherOperations.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedListDeclaration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Insert.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Delete.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sortare.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

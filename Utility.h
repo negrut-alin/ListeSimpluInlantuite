@@ -5,6 +5,7 @@
 
 int listaActiva(Node* PrimulNod);
 void ConvertToCharPointer(char** Destination, char* Source);
+void IntershimbareNoduri(Node** FirstNode , Node** SecondNode);
 
 
 #endif

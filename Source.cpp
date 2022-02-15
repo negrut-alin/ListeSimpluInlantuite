@@ -5,6 +5,7 @@
 #include "DataNode.h"
 #include "Insert.h"
 #include "Delete.h"
+#include "Sortare.h"
 
 
 
@@ -108,8 +109,50 @@ REVENIRE:
 		TraversareLista(PrimulNode);
 		break;
 	case 4:
+		printf("In Lista Actuala se afla %u elemente ! ", numarElementeLista(PrimulNode));
 		break;
 	case 5:
+		// MENIU STERGERE 
+		unsigned choice5;
+	REVENIRE5: // De aici ne putem intoarce in cazul in care s-a gresit inputul
+		system("cls"); // Stergere buffer din consola 
+		printf("\n\n -----------> Sortare Lista Inlantuita <---------------------- \n\n");
+		printf(" 1. Sortare Lista Dupa Nume de Utilizator (Ascendent) ;\n");
+		printf(" 2. Sortare Lista Dupa Nume de Utilizator (Descendent) ;\n");
+		printf(" 3. Sortare Lista Dupa Numarul de Posturi (Ascendent) ;\n");
+		printf(" 4. Sortare Lista Dupa Numarul de Posturi (Descendent) ; \n\n\n");
+
+		printf("Insereaza Optiunea Ta : ");
+		scanf_s(" %u", &choice5);
+
+		system("cls");
+
+
+		switch(choice5)
+		{
+		case 1:
+			sortareDupaNumeUtilizator(&PrimulNode); // Aplicare Sortare Ascendenta (Implicita)
+			printf("Sortarea Ascendenta s-a efectuat cu succes ! \n");
+			break;
+		case 2:
+			sortareDupaNumeUtilizator(&PrimulNode); // Aplicare Sortare Ascendenta (Implicita)
+			InversareLista(&PrimulNode); // Inversam lista pentru a obtine o Sortare Descendenta 
+			printf("Sortarea Descendenta s-a efectuat cu succes ! \n");
+			break;
+		case 3:
+			sortareDupaNumarDePosturi(&PrimulNode); // Aplicare Sortare Ascendenta (Implicita)
+			printf("Sortarea Ascendenta s-a efectuat cu succes ! \n");
+			break;
+		case 4:
+			sortareDupaNumarDePosturi(&PrimulNode); // Aplicare Sortare Ascendenta (Implicita)
+			InversareLista(&PrimulNode); // Inversam lista pentru a obtine o Sortare Descendenta 
+			printf("Sortarea Descendenta s-a efectuat cu succes ! \n");
+			break;
+		default:
+			goto REVENIRE5;
+			break;
+ 		}
+
 		break;
 	case 6:
 		break;

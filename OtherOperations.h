@@ -6,6 +6,8 @@
 unsigned CautareLista(Node* PrimulNode, char* numeUtilizator);
 void TraversareLista(Node* PrimulNode);
 unsigned numarElementeLista(Node* CapNod);
+void InversareLista(Node** PrimulNode); 
+
 
 
 #endif // ! OTHER_OPERATIONS_DOT_H

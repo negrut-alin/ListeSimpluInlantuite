@@ -64,5 +64,28 @@ unsigned numarElementeLista(Node* CapNod) { // Returneaza Numarul de elemente
 
 }
 
+// Algoritm pentru inversare lista (reverse)
+void InversareLista(Node** PrimulNode)
+{
+	Node* prevNode = NULL, * Iterator = *PrimulNode;
+
+	if (!listaActiva(Iterator))
+		printf("NU SE POATE EFECTUA INVERSAREA PE O LISTA INACTIVA !");
+
+	while (Iterator != NULL)  // Ciclare Pana la Consumarea Listei 
+	{
+		Node* nextNode = Iterator->nextNode; // Preluam Urmatorul nod 
+		Iterator->nextNode = prevNode; // Urmatorul Nod va fi cel precedent 
+		prevNode = Iterator; // Precentul Nod va fi cel curent 
+		Iterator = nextNode; // Nodul Curent va fi urmatorul nod 
+	}
+
+	*PrimulNode = prevNode; // Egalam lista inversata 
+
+}
+
+
+
+
 
 
